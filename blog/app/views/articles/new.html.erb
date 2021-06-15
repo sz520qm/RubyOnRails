@@ -1,26 +1,6 @@
 <h1>New Article</h1>
  <div class="p-4">
 
-<%= form_with model: @article do |form|  %>
-  <div class="field form-group mt-4">
-     <%= form.label :title %><br>
-    <%= form.text_field :title, class:"form-control" %>
-    <% @article.errors.full_messages_for(:title).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-  </div>
+<%= render "form", article: @article %>
 
-  <div class="field form-group mt-4">
-    <%= form.label :body %><br>
-    <%= form.text_area :body, class:"form-control" %>
-     <% @article.errors.full_messages_for(:body).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-  </div>
-
-  <div class="actions mt-4">
-    <%= form.submit class:"btn btn-primary" %>
-  </div>
-
-   </div>
-<% end %>
+</div>
